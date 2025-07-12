@@ -1,0 +1,429 @@
+[
+  {
+    "bill_id": 1,
+    "items": [
+      {
+        "id": "ec2-1",
+        "resource": "EC2 Instance",
+        "description": "t2.large instance running 24/7 but CPU usage is consistently below 5% - clearly underutilized",
+        "cost": 120.00,
+        "category_answer": "idle",
+        "optimization_answer": "rightsizing"
+      },
+      {
+        "id": "s3-1",
+        "resource": "S3 Bucket",
+        "description": "Backup bucket with old snapshots from 2 years ago that are never accessed - pure waste",
+        "cost": 45.00,
+        "category_answer": "idle",
+        "optimization_answer": "lifecycle policy"
+      },
+      {
+        "id": "rds-1",
+        "resource": "RDS Database",
+        "description": "db.m4.large database with only 2 active connections but paying for 1000 max connections",
+        "cost": 200.00,
+        "category_answer": "overprovisioned",
+        "optimization_answer": "rightsizing"
+      },
+      {
+        "id": "lambda-1",
+        "resource": "Lambda Function",
+        "description": "Function that runs daily backups efficiently with minimal execution time - well optimized",
+        "cost": 10.00,
+        "category_answer": "underprovisioned",
+        "optimization_answer": "no action"
+      },
+      {
+        "id": "eip-1",
+        "resource": "Elastic IP",
+        "description": "Static IP address allocated but not attached to any instance - completely unused",
+        "cost": 5.00,
+        "category_answer": "idle",
+        "optimization_answer": "release"
+      },
+      {
+        "id": "ebs-1",
+        "resource": "EBS Volume",
+        "description": "500GB volume attached to stopped instance with no recent snapshots - wasted storage",
+        "cost": 50.00,
+        "category_answer": "idle",
+        "optimization_answer": "lifecycle policy"
+      },
+      {
+        "id": "cloudfront-1",
+        "resource": "CloudFront",
+        "description": "CDN serving high traffic website with optimal performance - correctly sized",
+        "cost": 75.00,
+        "category_answer": "underprovisioned",
+        "optimization_answer": "no action"
+      }
+    ]
+  },
+  {
+    "bill_id": 2,
+    "items": [
+      {
+        "id": "ec2-2",
+        "resource": "EC2 Instance",
+        "description": "c5.2xlarge dev instance that runs only 8 hours per day but pays for 24/7 - wasted money",
+        "cost": 180.00,
+        "category_answer": "idle",
+        "optimization_answer": "rightsizing"
+      },
+      {
+        "id": "ebs-2",
+        "resource": "EBS Volume",
+        "description": "500GB volume attached to stopped instance with no snapshots - completely unused storage",
+        "cost": 50.00,
+        "category_answer": "idle",
+        "optimization_answer": "lifecycle policy"
+      },
+      {
+        "id": "cloudfront-2",
+        "resource": "CloudFront",
+        "description": "CDN serving high traffic e-commerce site with optimal performance - correctly sized",
+        "cost": 75.00,
+        "category_answer": "underprovisioned",
+        "optimization_answer": "no action"
+      },
+      {
+        "id": "dynamodb-1",
+        "resource": "DynamoDB Table",
+        "description": "Table with 1000 read/write units but only using 50 units - massive overprovisioning",
+        "cost": 120.00,
+        "category_answer": "overprovisioned",
+        "optimization_answer": "rightsizing"
+      },
+      {
+        "id": "elb-1",
+        "resource": "Load Balancer",
+        "description": "Load balancer with no healthy targets and zero traffic - completely idle",
+        "cost": 20.00,
+        "category_answer": "idle",
+        "optimization_answer": "release"
+      },
+      {
+        "id": "rds-2",
+        "resource": "RDS Database",
+        "description": "db.t3.micro database struggling with high query load - needs more resources",
+        "cost": 15.00,
+        "category_answer": "underprovisioned",
+        "optimization_answer": "rightsizing"
+      },
+      {
+        "id": "lambda-2",
+        "resource": "Lambda Function",
+        "description": "Function processing large files but timing out frequently - needs more memory",
+        "cost": 8.00,
+        "category_answer": "underprovisioned",
+        "optimization_answer": "rightsizing"
+      }
+    ]
+  },
+  {
+    "bill_id": 3,
+    "items": [
+      {
+        "id": "ec2-3",
+        "resource": "EC2 Instance",
+        "description": "m5.xlarge production server with 90% CPU usage and high traffic - correctly sized",
+        "cost": 160.00,
+        "category_answer": "underprovisioned",
+        "optimization_answer": "no action"
+      },
+      {
+        "id": "s3-2",
+        "resource": "S3 Bucket",
+        "description": "Log bucket with millions of old log files never accessed - pure waste",
+        "cost": 80.00,
+        "category_answer": "idle",
+        "optimization_answer": "lifecycle policy"
+      },
+      {
+        "id": "rds-3",
+        "resource": "RDS Database",
+        "description": "db.r5.large database with auto-scaling but only 10% I/O usage - overprovisioned",
+        "cost": 150.00,
+        "category_answer": "overprovisioned",
+        "optimization_answer": "rightsizing"
+      },
+      {
+        "id": "redshift-1",
+        "resource": "Redshift Cluster",
+        "description": "Data warehouse with single node but massive storage costs - needs optimization",
+        "cost": 200.00,
+        "category_answer": "overprovisioned",
+        "optimization_answer": "lifecycle policy"
+      },
+      {
+        "id": "vpc-1",
+        "resource": "NAT Gateway",
+        "description": "NAT gateway with almost no outbound traffic - barely used",
+        "cost": 45.00,
+        "category_answer": "idle",
+        "optimization_answer": "release"
+      },
+      {
+        "id": "lambda-3",
+        "resource": "Lambda Function",
+        "description": "Function handling API requests efficiently with optimal performance - well sized",
+        "cost": 12.00,
+        "category_answer": "underprovisioned",
+        "optimization_answer": "no action"
+      },
+      {
+        "id": "ebs-3",
+        "resource": "EBS Volume",
+        "description": "100GB volume with high IOPS provisioned but only 5% utilization - wasted performance",
+        "cost": 25.00,
+        "category_answer": "overprovisioned",
+        "optimization_answer": "rightsizing"
+      }
+    ]
+  },
+  {
+    "bill_id": 4,
+    "items": [
+      {
+        "id": "ec2-4",
+        "resource": "EC2 Instance",
+        "description": "t3.micro web server with moderate traffic and good performance - correctly sized",
+        "cost": 8.00,
+        "category_answer": "underprovisioned",
+        "optimization_answer": "no action"
+      },
+      {
+        "id": "s3-3",
+        "resource": "S3 Bucket",
+        "description": "Media bucket with active video files accessed daily - properly utilized",
+        "cost": 120.00,
+        "category_answer": "underprovisioned",
+        "optimization_answer": "no action"
+      },
+      {
+        "id": "rds-4",
+        "resource": "RDS Database",
+        "description": "db.t3.micro database with burstable performance and low storage - well sized",
+        "cost": 15.00,
+        "category_answer": "underprovisioned",
+        "optimization_answer": "no action"
+      },
+      {
+        "id": "lambda-4",
+        "resource": "Lambda Function",
+        "description": "Daily backup function running efficiently with minimal execution time - optimized",
+        "cost": 2.00,
+        "category_answer": "underprovisioned",
+        "optimization_answer": "no action"
+      },
+      {
+        "id": "ebs-4",
+        "resource": "EBS Volume",
+        "description": "100GB volume with high IOPS provisioned but only 10% utilization - overprovisioned",
+        "cost": 12.00,
+        "category_answer": "overprovisioned",
+        "optimization_answer": "rightsizing"
+      },
+      {
+        "id": "cloudfront-3",
+        "resource": "CloudFront",
+        "description": "CDN with low traffic and minimal bandwidth usage - underutilized",
+        "cost": 5.00,
+        "category_answer": "idle",
+        "optimization_answer": "rightsizing"
+      },
+      {
+        "id": "elb-2",
+        "resource": "Load Balancer",
+        "description": "Load balancer with no traffic and no healthy targets - completely idle",
+        "cost": 18.00,
+        "category_answer": "idle",
+        "optimization_answer": "release"
+      }
+    ]
+  },
+  {
+    "bill_id": 5,
+    "items": [
+      {
+        "id": "ec2-5",
+        "resource": "EC2 Instance",
+        "description": "c6i.4xlarge ML instance with GPU requirements and high utilization - correctly sized",
+        "cost": 400.00,
+        "category_answer": "underprovisioned",
+        "optimization_answer": "no action"
+      },
+      {
+        "id": "s3-4",
+        "resource": "S3 Bucket",
+        "description": "Archive bucket with project files not accessed for 3 years - pure waste",
+        "cost": 60.00,
+        "category_answer": "idle",
+        "optimization_answer": "lifecycle policy"
+      },
+      {
+        "id": "rds-5",
+        "resource": "RDS Database",
+        "description": "db.m5.2xlarge database with read replicas but only 5% query load - overprovisioned",
+        "cost": 350.00,
+        "category_answer": "overprovisioned",
+        "optimization_answer": "rightsizing"
+      },
+      {
+        "id": "elasticache-1",
+        "resource": "ElastiCache",
+        "description": "Redis cluster with 5 nodes but cache hit ratio below 30% - overprovisioned",
+        "cost": 180.00,
+        "category_answer": "overprovisioned",
+        "optimization_answer": "rightsizing"
+      },
+      {
+        "id": "cloudwatch-1",
+        "resource": "CloudWatch Logs",
+        "description": "Application logs with detailed monitoring but no retention policies - wasting storage",
+        "cost": 25.00,
+        "category_answer": "idle",
+        "optimization_answer": "lifecycle policy"
+      },
+      {
+        "id": "lambda-5",
+        "resource": "Lambda Function",
+        "description": "Function processing large datasets but frequently timing out - needs more resources",
+        "cost": 15.00,
+        "category_answer": "underprovisioned",
+        "optimization_answer": "rightsizing"
+      },
+      {
+        "id": "ebs-5",
+        "resource": "EBS Volume",
+        "description": "200GB volume with high IOPS but only 2% disk activity - overprovisioned",
+        "cost": 30.00,
+        "category_answer": "overprovisioned",
+        "optimization_answer": "rightsizing"
+      }
+    ]
+  },
+  {
+    "bill_id": 6,
+    "items": [
+      {
+        "id": "ec2-6",
+        "resource": "EC2 Instance",
+        "description": "t2.small dev server used only 2 hours per day but runs 24/7 - wasted money",
+        "cost": 15.00,
+        "category_answer": "idle",
+        "optimization_answer": "rightsizing"
+      },
+      {
+        "id": "s3-5",
+        "resource": "S3 Bucket",
+        "description": "Backup bucket with daily snapshots but no cleanup policies - accumulating waste",
+        "cost": 90.00,
+        "category_answer": "idle",
+        "optimization_answer": "lifecycle policy"
+      },
+      {
+        "id": "rds-6",
+        "resource": "RDS Database",
+        "description": "db.t3.small database with adequate performance for current workload - well sized",
+        "cost": 25.00,
+        "category_answer": "underprovisioned",
+        "optimization_answer": "no action"
+      },
+      {
+        "id": "lambda-6",
+        "resource": "Lambda Function",
+        "description": "API function with high request volume and optimal performance - correctly sized",
+        "cost": 8.00,
+        "category_answer": "underprovisioned",
+        "optimization_answer": "no action"
+      },
+      {
+        "id": "ebs-6",
+        "resource": "EBS Volume",
+        "description": "200GB volume with high IOPS provisioned but only 3% disk activity - overprovisioned",
+        "cost": 20.00,
+        "category_answer": "overprovisioned",
+        "optimization_answer": "rightsizing"
+      },
+      {
+        "id": "cloudfront-4",
+        "resource": "CloudFront",
+        "description": "CDN with no traffic and zero bandwidth usage - completely idle",
+        "cost": 3.00,
+        "category_answer": "idle",
+        "optimization_answer": "release"
+      },
+      {
+        "id": "elb-3",
+        "resource": "Load Balancer",
+        "description": "Load balancer with no healthy targets and zero traffic - completely unused",
+        "cost": 16.00,
+        "category_answer": "idle",
+        "optimization_answer": "release"
+      }
+    ]
+  },
+  {
+    "bill_id": 7,
+    "items": [
+      {
+        "id": "ec2-7",
+        "resource": "EC2 Instance",
+        "description": "m5.large production server with steady traffic and good performance - correctly sized",
+        "cost": 85.00,
+        "category_answer": "underprovisioned",
+        "optimization_answer": "no action"
+      },
+      {
+        "id": "s3-6",
+        "resource": "S3 Bucket",
+        "description": "User upload bucket with lifecycle policies but high storage costs - needs optimization",
+        "cost": 150.00,
+        "category_answer": "overprovisioned",
+        "optimization_answer": "lifecycle policy"
+      },
+      {
+        "id": "rds-7",
+        "resource": "RDS Database",
+        "description": "db.m5.large database with multi-AZ and automated backups - well configured",
+        "cost": 120.00,
+        "category_answer": "underprovisioned",
+        "optimization_answer": "no action"
+      },
+      {
+        "id": "cloudfront-5",
+        "resource": "CloudFront",
+        "description": "CDN with global edge locations and high bandwidth usage - correctly sized",
+        "cost": 75.00,
+        "category_answer": "underprovisioned",
+        "optimization_answer": "no action"
+      },
+      {
+        "id": "elb-4",
+        "resource": "Load Balancer",
+        "description": "Network load balancer with multiple targets and active traffic - well utilized",
+        "cost": 18.00,
+        "category_answer": "underprovisioned",
+        "optimization_answer": "no action"
+      },
+      {
+        "id": "lambda-7",
+        "resource": "Lambda Function",
+        "description": "Function processing user uploads efficiently with optimal performance - well sized",
+        "cost": 6.00,
+        "category_answer": "underprovisioned",
+        "optimization_answer": "no action"
+      },
+      {
+        "id": "ebs-7",
+        "resource": "EBS Volume",
+        "description": "100GB volume with moderate IOPS and 50% utilization - correctly provisioned",
+        "cost": 12.00,
+        "category_answer": "underprovisioned",
+        "optimization_answer": "no action"
+      }
+    ]
+  }
+] 
