@@ -1,0 +1,82 @@
+[
+  {
+    "front": "What are the three FinOps Phases?",
+    "back": "Inform, Optimize, Operate - continuous cycle for cloud cost management"
+  },
+  {
+    "front": "What are the Iron Triangle trade-offs?",
+    "back": "Quality, Speed, Cost - fundamental business trade-offs in technology decisions"
+  },
+  {
+    "front": "Which domain includes Rate Optimization capability?",
+    "back": "Optimize Usage & Cost - matching workload needs to services"
+  },
+  {
+    "front": "What does amortization mean in FinOps?",
+    "back": "Retiring capital payment gradually over time reflecting periodic benefits"
+  },
+  {
+    "front": "What is MDCO in FinOps?",
+    "back": "Metrics-Driven Cost Optimization - data-driven decision making with thresholds"
+  },
+  {
+    "front": "Who does FinOps bring together?",
+    "back": "Engineering, Business, and Finance Teams for cloud unit economics"
+  },
+  {
+    "front": "What are Reserved Instances and CUDs examples of?",
+    "back": "Commitment-Based Discounts - upfront commitments for lower resource rates"
+  },
+  {
+    "front": "What is the Prius Effect?",
+    "back": "Identifying optimization opportunities motivates Personas to take future action"
+  },
+  {
+    "front": "What defines Allied Personas?",
+    "back": "Roles not directly in FinOps but collaborate with practitioners"
+  },
+  {
+    "front": "What is showback versus chargeback?",
+    "back": "Showback reports costs; chargeback actually charges cost centers officially"
+  },
+  {
+    "front": "What is fully-loaded cost?",
+    "back": "Amortized costs including upfront fees divided across billing units"
+  },
+  {
+    "front": "How often should FinOps Phases be performed?",
+    "back": "As often as possible - continuous improvement cycle"
+  },
+  {
+    "front": "What is Policy & Governance capability?",
+    "back": "Establishing controls ensuring cloud use aligns with business objectives"
+  },
+  {
+    "front": "What motivates Engineering teams in FinOps?",
+    "back": "Delivering faster, high-quality services while maintaining business operations"
+  },
+  {
+    "front": "What are FinOps Scopes?",
+    "back": "Technology spending segments where FinOps practitioners apply FinOps concepts"
+  },
+  {
+    "front": "What happens in the Inform Phase?",
+    "back": "Creating visibility into data needed for successful FinOps execution"
+  },
+  {
+    "front": "What is Workload Optimization in Crawl stage?",
+    "back": "Manually turning off resources when idle for basic optimization"
+  },
+  {
+    "front": "What drives collaboration between Personas?",
+    "back": "Considering each Persona's motivations, language, and perspectives in initiatives"
+  },
+  {
+    "front": "What is the State of FinOps?",
+    "back": "Annual FinOps Foundation survey gathering industry insights and trends"
+  },
+  {
+    "front": "What is cloud scalability?",
+    "back": "System's ability to handle increased workload by adding resources"
+  }
+]

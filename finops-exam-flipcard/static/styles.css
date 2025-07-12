@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 30px;
+}
+
+#flipcards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 32px;
+    margin: 40px auto;
+    max-width: 1100px;
+    padding: 24px;
+    min-height: 600px;
+    box-sizing: border-box;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 180px;
+    height: 240px;
+    perspective: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    background: #fff;
+    padding: 20px;
+    transition: background 0.3s;
+    box-sizing: border-box;
+}
+
+/* Colorful card fronts */
+.flip-card-front.color-0 { background: #2196f3; color: #fff; }
+.flip-card-front.color-1 { background: #e91e63; color: #fff; }
+.flip-card-front.color-2 { background: #ff9800; color: #fff; }
+.flip-card-front.color-3 { background: #4caf50; color: #fff; }
+.flip-card-front.color-4 { background: #9c27b0; color: #fff; }
+.flip-card-front.color-5 { background: #00bcd4; color: #fff; }
+.flip-card-front.color-6 { background: #ffeb3b; color: #333; }
+.flip-card-front.color-7 { background: #f44336; color: #fff; }
+.flip-card-front.color-8 { background: #8bc34a; color: #fff; }
+.flip-card-front.color-9 { background: #ff5722; color: #fff; }
+
+.flip-card-back {
+    background: #fff;
+    color: #333;
+    transform: rotateY(180deg);
+}
+
+@media (max-width: 900px) {
+    #flipcards-container {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 20px;
+        padding: 12px;
+    }
+    .flip-card {
+        width: 160px;
+        height: 210px;
+    }
+}
+
+@media (max-width: 600px) {
+    #flipcards-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        padding: 4px;
+    }
+    .flip-card {
+        width: 120px;
+        height: 160px;
+    }
+} 
