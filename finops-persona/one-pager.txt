@@ -1,0 +1,62 @@
+FinOps City: Match & Solve - One-Pager Game Design Document
+Below is a concise one-pager document tailored for you to share with Cursor (or any coding assistant) to build the interactive game "FinOps City: Match & Solve." This document outlines the game's concept, features, problem statements, personas, and technical requirements using the Python/FastAPI, HTML, CSS, JS, and Docker stack. It is designed to be clear and actionable for code generation.
+
+FinOps City: Match & Solve - Game Design One-Pager
+
+Overview
+"FinOps City: Match & Solve" is an interactive web-based educational game aimed at teaching students about FinOps (Financial Operations) by matching cloud cost management problems to appropriate FinOps Personas. Players engage in a gamified experience where they assign real-world problem statements to Core or Allied Personas, receive feedback, and solve mini-missions. The game runs on Docker and is built using Python/FastAPI for the backend and HTML/CSS/JS for the frontend.
+
+Objective
+Educate players on FinOps roles, responsibilities, and benefits through an engaging matching mechanic and problem-solving scenarios, highlighting the importance of collaboration in cloud financial management.
+
+Target Audience
+Students, FinOps learners, cloud engineers, and financial analysts interested in cloud cost optimization.
+
+Key Features
+
+Problem Statements: Players match 5 predefined FinOps challenges to the correct persona.
+P1: "Unexpected Cost Spike: Cloud bill jumped by 50% due to unoptimized resources." (Best: Cloud Engineer)
+P2: "Budget Forecasting Issue: Need to predict next quarter’s cloud spending." (Best: Finance Analyst)
+P3: "Lack of Cost Visibility: Teams unaware of cloud usage costs." (Best: Finance Analyst)
+P4: "Resource Scaling Dilemma: Scale resources for a product launch while controlling costs." (Best: Product Manager)
+P5: "Compliance Gap: Risk of violating cloud spending policies." (Best: Executive Leader)
+FinOps Personas: Players choose or assign problems to these roles:
+Cloud Engineer (Core): Optimizes resources.
+Finance Analyst (Allied): Handles budgeting and forecasting.
+Product Manager (Allied): Balances business needs and costs.
+Procurement Specialist (Allied): Manages vendor policies.
+Executive Leader (Allied): Ensures accountability.
+Matching Mechanic: Drag-and-drop or selection UI to match problems to personas, with instant feedback on correctness and explanations.
+Mini-Missions: After correct matches, unlock short scenarios (e.g., choose cost-saving actions) to earn points.
+Scoring & Feedback: Points for correct matches and mission success; summary of learning outcomes post-game.
+Technical Requirements
+
+Backend: Python with FastAPI to manage game logic, problem-persona data, matching validation, and feedback. Example endpoint: /match to validate problem-persona pairs and return feedback.
+Frontend: HTML/CSS for layout (card-based UI for problems/personas), JavaScript for interactivity (drag-and-drop or selections) and API calls to backend. Use Chart.js (optional) for visual feedback.
+Database: Lightweight SQLite or in-memory storage for game state and scores.
+Containerization: Docker to package the app (FastAPI server + frontend assets) for easy deployment. Provide a Dockerfile and docker-compose.yml.
+Deliverables: Full code for backend (FastAPI), frontend (HTML/CSS/JS), and Docker setup. Ensure the app runs locally via docker-compose up.
+Game Flow
+
+Start screen: Brief intro to FinOps and game rules.
+Matching screen: Display 5 problem cards and persona options; players match via UI.
+Feedback: Show correct/incorrect matches with explanations (e.g., “Great! Cloud Engineer optimizes resources for cost spikes.”).
+Mini-Mission: Simple choice-based task for each correct match (e.g., “Shut down unused instances?”).
+Results: Display score and key FinOps takeaways.
+Success Criteria
+
+Players learn FinOps persona roles by matching problems correctly.
+App runs seamlessly on Docker with no setup errors.
+UI is intuitive, responsive, and visually clear (color-coded feedback: green for correct, red for incorrect).
+Development Notes
+
+Hardcode problem-persona correct matches for simplicity (e.g., Problem 1 → Cloud Engineer).
+Focus on core functionality first (matching + feedback), then add mini-missions if time permits.
+Ensure feedback text educates on FinOps concepts (e.g., explain persona responsibilities).
+Request for Cursor
+Please build the complete code for "FinOps City: Match & Solve" based on this one-pager. Provide:
+
+FastAPI backend code with endpoints for problem retrieval and match validation.
+HTML/CSS/JS frontend for matching UI and feedback display.
+Docker setup files (Dockerfile, docker-compose.yml) to run the app.
+Instructions to run the app locally. Ensure the game is functional, educational, and user-friendly.
