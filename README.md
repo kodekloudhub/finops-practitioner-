@@ -1,80 +1,93 @@
 # FinOps Practitioner Educational Tools 🎓💰
 
-Welcome to the FinOps Practitioner repository! This collection features interactive web applications designed to teach FinOps (Financial Operations) concepts through gamification and hands-on learning experiences.
+A comprehensive collection of interactive web applications designed to teach FinOps (Financial Operations) concepts through gamification and hands-on learning experiences.
 
 ## 🚀 Overview
 
-This repository contains two educational tools that help practitioners understand cloud cost optimization and FinOps fundamentals:
+This repository contains 6 educational tools that help practitioners understand cloud cost optimization and FinOps fundamentals through interactive games and simulations:
 
-### 1. [FinOps CloudBill Game](./finops-cloudbill-game/README.md) 🎮
-An interactive game where you analyze mock AWS bills to identify and fix cloud cost "leaks" using FinOps best practices.
+### 1. [FinOps CloudBill Game](./finops-cloudbill-game/) 🎮
+Analyze mock AWS bills to identify and fix cloud cost "leaks" using FinOps best practices.
 
-**Key Features:**
-- Analyze realistic AWS service costs (EC2, S3, RDS, Lambda, etc.)
-- Categorize resources as idle, overprovisioned, or underprovisioned
-- Apply optimizations like rightsizing, lifecycle policies, and resource releases
-- Get instant feedback with cost savings calculations
-- Learn through practical, real-world scenarios
+### 2. [FinOps Exam Flipcards](./finops-exam-flipcard/) 📚
+Interactive study tool with 20 flipcards covering essential FinOps concepts for exam preparation.
 
-### 2. [FinOps Exam Flipcards](./finops-exam-flipcard/README.md) 📚
-An interactive study tool with 20 flipcards covering essential FinOps concepts for exam preparation.
+### 3. [Kubecost FinOps Detective Game](./finops-kubecost-game/) 🕵️‍♂️
+Choose-your-own-adventure game where you investigate high Kubernetes costs using simulated Kubecost data.
 
-**Key Topics:**
-- The three FinOps phases (Inform, Optimize, Operate)
-- Iron Triangle trade-offs (Quality, Speed, Cost)
-- FinOps terminology (MDCO, amortization, showback vs chargeback)
-- Commitment-based discounts and optimization strategies
-- Persona motivations and collaboration principles
+### 4. [FinOps Journey Simulation](./finops-maturity-game/) 📈
+Learn to identify FinOps maturity stages (Crawl, Walk, Run) through realistic company scenarios.
+
+### 5. [FinOps City: Match & Solve](./finops-persona/) 🏙️
+Match cloud cost management problems to the appropriate FinOps personas in this interactive puzzle game.
+
+### 6. [Azure Cost Optimization Puzzle](./finops-realworld-game/) 🧩
+Practice the logical sequence of Azure cost optimization steps through hands-on problem-solving.
 
 ## 🛠️ Technology Stack
 
-Both applications share a similar architecture:
-- **Backend:** Python with FastAPI for REST APIs
-- **Frontend:** Vanilla HTML, CSS, and JavaScript (no frameworks)
-- **Data Storage:** JSON files for game scenarios and flipcard content
+All applications share similar architectures:
+- **Backend:** Python with FastAPI or Streamlit
+- **Frontend:** Vanilla HTML/CSS/JavaScript or Streamlit UI
+- **Data:** JSON files for scenarios and content
 - **Containerization:** Docker support for easy deployment
-- **No External Dependencies:** Runs completely offline without cloud services
+- **No External Dependencies:** Run completely offline
 
 ## 🏃‍♂️ Quick Start
 
-Each application can be run independently. Choose your learning path:
-
-### Option 1: Run with Docker (Recommended)
+Each application can be run independently using Docker:
 
 ```bash
-# For CloudBill Game
-cd finops-cloudbill-game
-docker build -t finops-cloudbill-game .
-docker run -p 8001:8001 finops-cloudbill-game
+# Navigate to any game directory
+cd finops-[game-name]
 
-# For Exam Flipcards
-cd finops-exam-flipcard
-docker build -t finops-flipcards .
-docker run -p 8000:8000 finops-flipcards
+# Build and run with Docker
+docker build -t finops-[game-name] .
+docker run -p [PORT]:[PORT] finops-[game-name]
 ```
 
-### Option 2: Run with Python
-
-```bash
-# Install dependencies
-pip install fastapi uvicorn
-
-# For CloudBill Game
-cd finops-cloudbill-game
-uvicorn main:app --reload --port 8001
-
-# For Exam Flipcards
-cd finops-exam-flipcard
-uvicorn main:app --reload --port 8000
-```
+Default ports:
+- CloudBill Game: 8001
+- Exam Flipcards: 8000
+- Kubecost Detective: 8501
+- Journey Simulation: 8501
+- FinOps City: 8501
+- Azure Puzzle: 8501
 
 ## 📖 Learning Path
 
 ### For Beginners:
-1. Start with the **Exam Flipcards** to understand core FinOps concepts
-2. Move to the **CloudBill Game** to apply your knowledge practically
+1. Start with **Exam Flipcards** to understand core concepts
+2. Try **Journey Simulation** to learn about maturity stages
+3. Play **FinOps City** to understand different personas
+4. Practice with **CloudBill Game** for hands-on optimization
 
 ### For Practitioners:
-1. Jump into the **CloudBill Game** to test your optimization skills
-2. Use the **Exam Flipcards** for quick concept reviews
+1. Jump into **Kubecost Detective** for Kubernetes cost management
+2. Master **Azure Puzzle** for systematic optimization approaches
+3. Challenge yourself with **CloudBill Game** scenarios
 
+## 🎯 Key Learning Areas
+
+- **FinOps Fundamentals:** Three phases (Inform, Optimize, Operate)
+- **Cost Optimization:** Rightsizing, lifecycle policies, reserved instances
+- **Kubernetes FinOps:** Namespace analysis, workload efficiency
+- **Maturity Assessment:** Crawl, Walk, Run stages
+- **Team Collaboration:** Understanding different FinOps personas
+- **Systematic Approaches:** Logical sequences for cost optimization
+
+## 🤝 Contributing
+
+Each project is self-contained with its own README. Feel free to:
+- Add new scenarios or questions
+- Improve UI/UX
+- Fix bugs or enhance features
+- Add more educational content
+
+## 📄 License
+
+These tools are designed for educational purposes. Use and modify freely for learning FinOps concepts.
+
+---
+
+**Start your FinOps learning journey today! 🚀**
