@@ -1,6 +1,6 @@
- # FinOps City: Match & Solve
+# FinOps City: Match & Solve (Streamlit Edition)
 
-An interactive web-based educational game designed to teach FinOps (Financial Operations) concepts through problem-solving and persona matching.
+An interactive web-based educational game designed to teach FinOps (Financial Operations) concepts through problem-solving and persona matching, built with Streamlit for a modern, responsive user experience.
 
 ## 🎮 Game Overview
 
@@ -15,10 +15,10 @@ An interactive web-based educational game designed to teach FinOps (Financial Op
 
 ## 🏗️ Technical Stack
 
-- **Backend**: Python with FastAPI
-- **Frontend**: HTML, CSS, JavaScript
+- **Frontend & Backend**: Streamlit (Python)
+- **Styling**: Custom CSS with modern gradients and animations
 - **Containerization**: Docker
-- **Port**: 8002
+- **Port**: 8501 (Streamlit default)
 
 ## 🚀 Quick Start
 
@@ -35,12 +35,12 @@ An interactive web-based educational game designed to teach FinOps (Financial Op
 
 2. **Build and run the application**
    ```bash
-   docker build -t finops-game .
-   docker run -p 8003:8003 finops-game
+   docker build -t finops-game-streamlit .
+   docker run -p 8501:8501 finops-game-streamlit
    ```
 
 3. **Access the game**
-   Open your browser and navigate to: `http://localhost:8002`
+   Open your browser and navigate to: `http://localhost:8501`
 
 4. **Stop the application**
    Press `Ctrl+C` in the terminal or run:
@@ -54,21 +54,29 @@ An interactive web-based educational game designed to teach FinOps (Financial Op
 ### Option 1: Using the startup script (Recommended)
 ```bash
 cd finops-persona
+chmod +x start.sh
 ./start.sh
 ```
 
 ### Option 2: Manual Docker commands
 ```bash
 cd finops-persona
-docker build -t finops-game .
-docker run -p 8002:8002 finops-game
+docker build -t finops-game-streamlit .
+docker run -p 8501:8501 finops-game-streamlit
 ```
 
 ### Option 3: Run in background
 ```bash
 cd finops-persona
-docker build -t finops-game .
-docker run -d -p 8002:8002 --name finops-game finops-game
+docker build -t finops-game-streamlit .
+docker run -d -p 8501:8501 --name finops-game-streamlit-container finops-game-streamlit
+```
+
+### Option 4: Run locally without Docker
+```bash
+cd finops-persona
+pip install -r requirements.txt
+streamlit run streamlit_app.py
 ```
 
 ## 🎮 How to Play
@@ -91,11 +99,11 @@ docker run -d -p 8002:8002 --name finops-game finops-game
 
 ### FinOps Personas
 
-- **Cloud Engineer** (Core): Optimizes cloud resources and infrastructure
-- **Finance Analyst** (Allied): Handles budgeting, forecasting, and financial planning
-- **Product Manager** (Allied): Balances business needs with cost considerations
-- **Procurement Specialist** (Allied): Manages vendor relationships and policies
-- **Executive Leader** (Allied): Ensures accountability and strategic alignment
+- **Cloud Engineer (Core)**: Optimizes cloud resources and infrastructure
+- **Finance Analyst (Allied)**: Handles budgeting, forecasting, and financial planning
+- **Product Manager (Allied)**: Balances business needs with cost considerations
+- **Procurement Specialist (Allied)**: Manages vendor relationships and policies
+- **Executive Leader (Allied)**: Ensures accountability and strategic alignment
 
 ## 🏆 Scoring System
 
@@ -109,28 +117,22 @@ docker run -d -p 8002:8002 --name finops-game finops-game
 
 ```
 finops-persona/
-├── backend/
-│   ├── main.py              # FastAPI application
-│   └── requirements.txt     # Python dependencies
-├── static/
-│   ├── index.html          # Main game interface
-│   ├── styles.css          # Game styling
-│   └── script.js           # Game logic
-├── Dockerfile              # Container configuration
-├── start.sh               # Easy startup script
-├── README.md              # This file
-└── one-pager.txt          # Game design document
+├── streamlit_app.py        # Main Streamlit application
+├── requirements.txt        # Python dependencies
+├── Dockerfile             # Container configuration
+├── start.sh              # Easy startup script
+├── README.md             # This file
+└── one-pager.txt         # Game design document
 ```
 
-### API Endpoints
+### Key Features
 
-- `GET /` - Health check
-- `GET /api/problems` - Get all problem statements
-- `GET /api/personas` - Get all FinOps personas
-- `POST /api/match` - Validate problem-persona matches
-- `GET /api/mini-mission/{problem_id}` - Get mini-mission for a problem
-- `POST /api/mini-mission/{problem_id}` - Submit mini-mission answer
-- `GET /api/game-summary` - Get game summary and learning outcomes
+- **Modern UI**: Beautiful gradients, animations, and responsive design
+- **Interactive Cards**: Click-to-select interface for problems and personas
+- **Real-time Feedback**: Instant visual feedback with color-coded results
+- **Progress Tracking**: Visual progress bar and score display
+- **Mini-Missions**: Engaging scenarios that test practical knowledge
+- **Comprehensive Results**: Detailed match summary and learning outcomes
 
 ### Local Development
 
@@ -138,26 +140,34 @@ If you want to run the application without Docker:
 
 1. **Install Python dependencies**
    ```bash
-   cd backend
    pip install -r requirements.txt
    ```
 
-2. **Run the FastAPI server**
+2. **Run the Streamlit app**
    ```bash
-   python main.py
+   streamlit run streamlit_app.py
    ```
 
-3. **Serve static files**
-   You can use any static file server or open `static/index.html` directly in your browser.
+3. **Access the application**
+   Open your browser and navigate to: `http://localhost:8501`
 
-## 🎨 Features
+## 🎨 UI Improvements
 
-- **Responsive Design**: Works on desktop and mobile devices
-- **Interactive UI**: Drag-and-drop style matching interface
-- **Instant Feedback**: Color-coded feedback with explanations
-- **Educational Content**: Detailed explanations of FinOps concepts
-- **Progress Tracking**: Real-time score and progress updates
-- **Mini-Missions**: Additional learning scenarios for each correct match
+### Visual Enhancements
+
+- **Gradient Headers**: Beautiful gradient backgrounds for main sections
+- **Card-based Design**: Modern card layout with hover effects
+- **Color-coded Feedback**: Green for success, red for errors
+- **Progress Visualization**: Animated progress bar
+- **Responsive Layout**: Works seamlessly on desktop and mobile
+
+### User Experience
+
+- **Intuitive Navigation**: Clear screen transitions
+- **Instant Feedback**: Immediate response to user actions
+- **Visual Hierarchy**: Clear distinction between different elements
+- **Accessibility**: High contrast and readable fonts
+- **Smooth Animations**: Subtle transitions for better engagement
 
 ## 🔧 Configuration
 
@@ -169,11 +179,11 @@ The application can be configured using environment variables:
 
 ### Port Configuration
 
-The default port is 8002. To change it:
+The default port is 8501 (Streamlit default). To change it:
 
 1. Update the `EXPOSE` line in `Dockerfile`
 2. Update the port in the `docker run` command
-3. Update the `API_BASE` constant in `static/script.js`
+3. Update the port in `start.sh`
 
 ## 🐛 Troubleshooting
 
@@ -181,10 +191,10 @@ The default port is 8002. To change it:
 
 1. **Port already in use**
    ```bash
-   # Check what's using port 8002
-   lsof -i :8002
+   # Check what's using port 8501
+   lsof -i :8501
    
-   # Kill the process or change the port in docker-compose.yml
+   # Kill the process or change the port
    ```
 
 2. **Docker build fails**
@@ -193,19 +203,19 @@ The default port is 8002. To change it:
    docker system prune -a
    
    # Rebuild without cache
-   docker build --no-cache -t finops-game .
+   docker build --no-cache -t finops-game-streamlit .
    ```
 
-3. **Game doesn't load**
-   - Check browser console for JavaScript errors
-   - Verify the API is running: `curl http://localhost:8002/`
-   - Ensure CORS is properly configured
+3. **Streamlit app doesn't load**
+   - Check browser console for errors
+   - Verify the app is running: `curl http://localhost:8501/`
+   - Check Docker logs: `docker logs finops-game-streamlit-container`
 
 ### Logs
 
 View application logs:
 ```bash
-docker logs finops-game-container
+docker logs finops-game-streamlit-container
 ```
 
 ## 📚 Educational Value
@@ -217,6 +227,24 @@ This game teaches:
 - **Problem-Solving**: How to approach different cloud cost challenges
 - **Collaboration**: The importance of teamwork in FinOps
 - **Best Practices**: Practical strategies for cost optimization
+
+## 🆕 What's New in Streamlit Edition
+
+### Enhanced Features
+
+- **Modern UI**: Complete redesign with gradients and animations
+- **Better UX**: Improved navigation and feedback systems
+- **Responsive Design**: Works perfectly on all screen sizes
+- **Real-time Updates**: Instant feedback and progress tracking
+- **Simplified Deployment**: Single Streamlit app instead of separate frontend/backend
+
+### Technical Improvements
+
+- **Single Codebase**: Everything in one Python file
+- **No API Calls**: Direct state management within Streamlit
+- **Better Performance**: Faster loading and interactions
+- **Easier Maintenance**: Simplified architecture
+- **Docker Optimization**: Smaller, more efficient container
 
 ## 🤝 Contributing
 
@@ -239,7 +267,7 @@ If you encounter any issues or have questions:
 1. Check the troubleshooting section above
 2. Review the browser console for errors
 3. Verify Docker is properly installed
-4. Ensure port 8002 is available
+4. Ensure port 8501 is available
 
 ---
 

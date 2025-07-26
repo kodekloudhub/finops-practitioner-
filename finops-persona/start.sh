@@ -1,7 +1,7 @@
- #!/bin/bash
+#!/bin/bash
 
-echo "🚀 Starting FinOps City: Match & Solve"
-echo "======================================"
+echo "🚀 Starting FinOps City: Match & Solve (Streamlit)"
+echo "=================================================="
 
 # Check if Docker is running
 if ! docker info > /dev/null 2>&1; then
@@ -10,28 +10,28 @@ if ! docker info > /dev/null 2>&1; then
 fi
 
 echo "📦 Building the Docker image..."
-docker build -t finops-game .
+docker build -t finops-game-streamlit .
 
-echo "🚀 Starting the application..."
-docker run -d -p 8002:8002 --name finops-game-container finops-game
+echo "🚀 Starting the Streamlit application..."
+docker run -d -p 8501:8501 --name finops-game-streamlit-container finops-game-streamlit
 
 echo "⏳ Waiting for the application to start..."
-sleep 3
+sleep 5
 
 # Check if the application is running
-if curl -f http://localhost:8002/ > /dev/null 2>&1; then
+if curl -f http://localhost:8501/ > /dev/null 2>&1; then
     echo "✅ Application is running successfully!"
     echo ""
     echo "🌐 Open your browser and navigate to:"
-    echo "   http://localhost:8002"
+    echo "   http://localhost:8501"
     echo ""
-    echo "🎮 Enjoy learning FinOps!"
+    echo "🎮 Enjoy learning FinOps with the new Streamlit interface!"
     echo ""
     echo "To stop the application, run:"
-    echo "   docker stop finops-game-container"
-    echo "   docker rm finops-game-container"
+    echo "   docker stop finops-game-streamlit-container"
+    echo "   docker rm finops-game-streamlit-container"
 else
     echo "❌ Application failed to start. Check the logs with:"
-    echo "   docker logs finops-game-container"
+    echo "   docker logs finops-game-streamlit-container"
     exit 1
 fi
